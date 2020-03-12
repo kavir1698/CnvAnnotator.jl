@@ -3,7 +3,7 @@ export return_variants
 "Call db file if it exists, otherwise, create it. This could be modified to call the correct database given chromosome number."
 function call_db(datadir, overwrite;chr=1)
   dbfile = joinpath(datadir, "snvdb.mysql")
-  if isfile(dbfile)
+  if isfile(dbfile) && overwrite==false
     db = SQLite.DB(dbfile)
   else
     db = populate_db(datadir, overwrite, chr=chr)
