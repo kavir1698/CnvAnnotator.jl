@@ -4,6 +4,7 @@ authors = ["Ali R. Vahdati <alirvahdati@gmail.com>"]
 version = "0.1.0"
 
 [deps]
+DBInterface = "a10d1c49-ce27-4219-8d33-6db1a4562965"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 GZip = "92fee26a-97fe-5a0c-ad85-20a5f3185b63"
 ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
