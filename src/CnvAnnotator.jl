@@ -2,6 +2,7 @@ module CnvAnnotator
 
 using RemoteFiles
 using SQLite
+using DBInterface
 using GZip
 using DataFrames
 using ProgressMeter
