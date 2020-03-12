@@ -1,0 +1,12 @@
+name = "CnvAnnotator"
+uuid = "4085eec6-dfbd-4f61-921c-ef46407d91d6"
+authors = ["Ali R. Vahdati <alirvahdati@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+GZip = "92fee26a-97fe-5a0c-ad85-20a5f3185b63"
+GeneticVariation = "9bc6ac9d-e6b2-5f70-b0a8-242a01662520"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+RemoteFiles = "cbe49d4c-5af1-5b60-bb70-0a60aa018e1b"
+SQLite = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
