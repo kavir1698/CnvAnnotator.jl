@@ -57,17 +57,17 @@ function create_confidence_column!(r::AbstractDataFrame, from, to, tolerance)
   # Fill confidence array.
   if tolerance > 0
     closest_within_outer = full_or_partial_overlap.(from - tolerance, to + tolerance, view(r, :, :outerStart), view(r, :, :outerEnd))
-    confidence[findall(x-> x==false, closest_within_outer)] .= "Query+tolerance partially within outer bounds of variation"
+    confidence[findall(x-> x==false, closest_within_outer)] .= "Tolerance partially within outer bounds of variation"
 
     closest_within_range = full_or_partial_overlap.(from - tolerance, to + tolerance, view(r, :, :start), view(r, :, :end))
-    confidence[findall(x-> x==false, closest_within_range)] .= "Query+tolerance partially within bounds of variation"
+    confidence[findall(x-> x==false, closest_within_range)] .= "Tolerance partially within bounds of variation"
 
     closest_within_innerRange = full_or_partial_overlap.(from - tolerance, to + tolerance, view(r, :, :innerStart), view(r, :, :innerEnd))
-    confidence[findall(x-> x==false, closest_within_innerRange)] .= "Query+tolerance partially within inner bounds of variation"
+    confidence[findall(x-> x==false, closest_within_innerRange)] .= "Tolerance partially within inner bounds of variation"
 
     # Change those within range that do not have  inner/outer start/end to the most confident case.
     closest_within_innerRange2 = full_or_partial_overlap.(from - tolerance, to + tolerance, leftinner, rightinner)
-    confidence[findall(x-> x==false, closest_within_innerRange2)] .= "Query+tolerance partially within inner bounds of variation"
+    confidence[findall(x-> x==false, closest_within_innerRange2)] .= "Tolerance partially within inner bounds of variation"
   end
 
   hit_within_outer = full_or_partial_overlap.(from, to, view(r, :, :outerStart), view(r, :, :outerEnd))
