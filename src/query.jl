@@ -34,7 +34,7 @@ function return_variants(from::Int, to::Int; tolerance::Int=0, chr=1, overwrite=
   else
     stmt = "SELECT * FROM tab WHERE (end >= $from - $tolerance AND start <= $to + $tolerance) OR (outerEnd >= $from - $tolerance AND innerStart <= $to + $tolerance)"
   end
-  r = SQLite.DBInterface.execute(db, stmt) |> DataFrame
+  r = DBInterface.execute(db, stmt) |> DataFrame
 
   if size(r, 1) > 0
     create_confidence_column!(r, from, to, tolerance)

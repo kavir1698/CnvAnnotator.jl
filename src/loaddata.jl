@@ -40,7 +40,7 @@ function populate_db(datadir, overwrite; chr=1)
       pathogenicity TINYTEXT,
       PRIMARY KEY (ID, alias)
     );"
-  SQLite.DBInterface.execute(db, stmt)
+  DBInterface.execute(db, stmt)
 
   insertstmt = """
     INSERT INTO tab (
@@ -59,7 +59,7 @@ function populate_db(datadir, overwrite; chr=1)
     )
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?)
   """
-  q = SQLite.DBInterface.prepare(db, insertstmt)
+  q = DBInterface.prepare(db, insertstmt)
   
   println("Creating database for the first time...")
   SQLite.transaction(db, "DEFERRED")
@@ -88,13 +88,13 @@ function populate_db(datadir, overwrite; chr=1)
       end
       originalID = pairdict["Name"]
 
-      SQLite.DBInterface.execute(q, [start, endd, ID, alias, outerStart, innerStart, innerEnd, outerEnd, CNV, originalID, dataOrigin, phenotype])
+      DBInterface.execute(q, [start, endd, ID, alias, outerStart, innerStart, innerEnd, outerEnd, CNV, originalID, dataOrigin, phenotype])
     end
     next!(progress)
   end
   SQLite.commit(db)
   println("Indexing...")
-  SQLite.DBInterface.execute(db, "CREATE INDEX pos ON tab (start,end)")
+  DBInterface.execute(db, "CREATE INDEX pos ON tab (start,end)")
   return db
 end
 
