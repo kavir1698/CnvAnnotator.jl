@@ -1,3 +1,4 @@
 /data/*.gz
 /data/*.md5
+/lib/
 /data/*.mysql
