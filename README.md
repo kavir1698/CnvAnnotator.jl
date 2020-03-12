@@ -9,6 +9,7 @@ Within a Julia REPL:
 ```jl
 ]add https://github.com/kavir1698/CnvAnnotator.jl.git
 ```
+It is tested on Julia V1.3 and Windows and Linux.
 
 ## Usage
 
