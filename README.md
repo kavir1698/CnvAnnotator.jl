@@ -29,7 +29,7 @@ Returns all the variants on Chr1 between `from` and `to`.
 * datadir="./" where to save downloaded and database files.
 ```
 
-On the first call of the function, it downloads all variant calls within GRChr38 assembly from dbVar website and creates a local database in SQLite. The local database contains the following information about variants: position, including inner/outer start/end; ID; alias; variation type (copy number status); variation's original ID; data origin; and pathogenicity of the variation. Building the database for the first time can take a few minutes (it takes 10 mins on my machine).
+On the first call of the function, it downloads all variant calls within GRCh38 assembly from dbVar website and creates a local database in SQLite. The local database contains the following information about variants: position, including inner/outer start/end; ID; alias; variation type (copy number status); variation's original ID; data origin; and pathogenicity of the variation. Building the database for the first time can take a few minutes (it takes 10 mins on my machine).
 
 ## Example
 
