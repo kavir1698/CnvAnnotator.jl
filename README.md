@@ -16,6 +16,7 @@ It is tested on Julia V1.3 and Windows and Linux.
 The interface to this package is through the `return_variants` function:
 
 ```
+    using CnvAnnotator
     return_variants(from::Int, to::Int; kwargs)
 
 Returns all the variants on Chr1 between `from` and `to`.
